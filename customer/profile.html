@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>কাস্টমার প্রোফাইল (Editable) | Dream Cart BD</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/navbar.css">
+  <link rel="stylesheet" href="/assets/css/dashboard.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <link rel="stylesheet" href="/assets/css/notification.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+  <div class="dashboard-layout">
+    <aside class="dashboard-sidebar">
+      <div class="mb-4 text-center">
+        <h4 style="color:var(--primary); font-weight:800;">Customer Portal</h4>
+        <div style="font-size:0.8rem; color:var(--text-muted);">Dream Cart BD</div>
+      </div>
+      <nav class="dashboard-nav">
+        <a href="/customer/dashboard.html" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> ড্যাশবোর্ড</a>
+        <a href="/customer/orders.html" class="dashboard-nav-item"><i class="fas fa-box"></i> আমার অর্ডারসমূহ</a>
+        <a href="/customer/cart.html" class="dashboard-nav-item"><i class="fas fa-shopping-cart"></i> আমার কার্ট</a>
+        <a href="/customer/favourite.html" class="dashboard-nav-item"><i class="fas fa-heart"></i> পছন্দ তালিকা</a>
+        <a href="/customer/profile.html" class="dashboard-nav-item active"><i class="fas fa-user"></i> প্রোফাইল তথ্য (Editable)</a>
+        <a href="/customer/settings.html" class="dashboard-nav-item"><i class="fas fa-cog"></i> সেটিংস ও পাসওয়ার্ড</a>
+        <a href="javascript:void(0)" onclick="DCBD_Auth.logout()" class="dashboard-nav-item" style="color:var(--danger);"><i class="fas fa-sign-out-alt"></i> লগআউট</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard-main">
+      <h1 class="section-title mb-4">কাস্টমার প্রোফাইল (Editable)</h1>
+      <div style="max-width:700px; background:var(--bg-surface); padding:2rem; border-radius:var(--radius-md); border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
+        <form id="customer-profile-editable-form">
+          <div class="flex items-center gap-4 mb-4">
+            <div style="position:relative;">
+              <img id="cust-preview-avatar" src="https://cdn-icons-png.flaticon.com/512/4042/4042356.png" style="width:90px; height:90px; border-radius:50%; object-fit:cover; border:3px solid var(--primary);">
+            </div>
+            <div style="flex:1;">
+              <label class="form-label">প্রোফাইল ছবি পরিবর্তন</label>
+              <input type="file" id="cust-file-upload" accept="image/*" class="form-control mb-2" style="font-size:0.85rem;">
+              <input type="url" id="cust-img-url" class="form-control" placeholder="অথবা ছবির অনলাইন লিংক পেস্ট করুন">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="form-group"><label class="form-label">ইউজার আইডি</label><input type="text" id="cust-userid" class="form-control" readonly></div>
+            <div class="form-group"><label class="form-label">পুরো নাম *</label><input type="text" id="cust-name" class="form-control" required></div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="form-group"><label class="form-label">মোবাইল নম্বর *</label><input type="tel" id="cust-phone" class="form-control" required></div>
+            <div class="form-group"><label class="form-label">ইমেইল</label><input type="email" id="cust-mail" class="form-control"></div>
+          </div>
+
+          <div class="form-group"><label class="form-label">ঠিকানা</label><textarea id="cust-address" class="form-control" rows="3"></textarea></div>
+
+          <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-save"></i> প্রোফাইল আপডেট করুন</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="/assets/js/core/config.js"></script>
+  <script src="/assets/js/core/storage.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/auth.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/toast.js"></script>
+  <script src="/assets/js/components/forms.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      DCBD_Navbar.render();
+      DCBD_Router.guard();
+      DCBD_ImagePreview.bind("cust-file-upload", "cust-img-url", "cust-preview-avatar");
+
+      const user = DCBD_Auth.getUser() || {};
+      document.getElementById("cust-userid").value = user.USER_ID || user.User_ID || "CUST-NEW";
+      document.getElementById("cust-name").value = user.Name || "";
+      document.getElementById("cust-phone").value = user.Mobile || "";
+      document.getElementById("cust-mail").value = user.Mail || "";
+      document.getElementById("cust-address").value = user.Address || "";
+      if (user.Profile_photo) document.getElementById("cust-preview-avatar").src = user.Profile_photo;
+
+      document.getElementById("customer-profile-editable-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        user.Name = document.getElementById("cust-name").value;
+        user.Mobile = document.getElementById("cust-phone").value;
+        user.Mail = document.getElementById("cust-mail").value;
+        user.Address = document.getElementById("cust-address").value;
+        user.Profile_photo = document.getElementById("cust-preview-avatar").src;
+        DCBD_Auth.setUser(user);
+        DCBD_Toast.success("সফল", "কাস্টমার প্রোফাইল সফলভাবে আপডেট করা হয়েছে!");
+      });
+    });
+  </script>
+</body>
+</html>

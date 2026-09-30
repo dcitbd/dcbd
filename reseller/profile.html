@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>শপ প্রোফাইল | Dream Cart BD</title>
+  <title>রিসেলার শপ প্রোফাইল (Editable) | Dream Cart BD</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="/assets/css/variables.css">
@@ -16,17 +14,11 @@
   <link rel="stylesheet" href="/assets/css/dashboard.css">
   <link rel="stylesheet" href="/assets/css/components.css">
   <link rel="stylesheet" href="/assets/css/forms.css">
-  <link rel="stylesheet" href="/assets/css/modal.css">
   <link rel="stylesheet" href="/assets/css/notification.css">
-  <link rel="stylesheet" href="/assets/css/voucher.css">
-  <link rel="stylesheet" href="/assets/css/table.css" onerror="this.remove()">
-  <link rel="stylesheet" href="/assets/css/utilities.css">
   <link rel="stylesheet" href="/assets/css/responsive.css">
-  <link rel="stylesheet" href="/assets/css/print.css">
 </head>
 <body>
   <div id="navbar-container"></div>
-
   <div class="dashboard-layout">
     <aside class="dashboard-sidebar">
       <div class="mb-4 text-center">
@@ -34,63 +26,98 @@
         <div style="font-size:0.8rem; color:var(--text-muted);">Dream Cart BD</div>
       </div>
       <nav class="dashboard-nav">
-        
-          <a href="/reseller/dashboard.html" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> ড্যাশবোর্ড</a>
-          <a href="/reseller/catalogue.html" class="dashboard-nav-item"><i class="fas fa-tags"></i> রিসেল ক্যাটালগ</a>
-          <a href="/reseller/orders.html" class="dashboard-nav-item"><i class="fas fa-boxes"></i> রিসেল অর্ডারসমূহ</a>
-          <a href="/reseller/payments.html" class="dashboard-nav-item"><i class="fas fa-hand-holding-usd"></i> কমিশন উইথড্র</a>
-          <a href="/reseller/payment-methods.html" class="dashboard-nav-item"><i class="fas fa-wallet"></i> পেমেন্ট মেথডস</a>
-          <a href="/reseller/sales-report.html" class="dashboard-nav-item"><i class="fas fa-chart-line"></i> সেলস রিপোর্ট</a>
-          <a href="/reseller/profile.html" class="dashboard-nav-item"><i class="fas fa-store"></i> শপ প্রোফাইল</a>
-          <a href="/reseller/settings.html" class="dashboard-nav-item"><i class="fas fa-cog"></i> অ্যাকাউন্ট সেটিংস</a>
-          <a href="javascript:void(0)" onclick="DCBD_Auth.logout()" class="dashboard-nav-item" style="color:var(--danger);"><i class="fas fa-sign-out-alt"></i> লগআউট</a>
-        
+        <a href="/reseller/dashboard.html" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> ড্যাশবোর্ড</a>
+        <a href="/reseller/catalogue.html" class="dashboard-nav-item"><i class="fas fa-tags"></i> রিসেল ক্যাটালগ</a>
+        <a href="/reseller/orders.html" class="dashboard-nav-item"><i class="fas fa-boxes"></i> রিসেল অর্ডারসমূহ</a>
+        <a href="/reseller/payments.html" class="dashboard-nav-item"><i class="fas fa-hand-holding-usd"></i> কমিশন উইথড্র</a>
+        <a href="/reseller/profile.html" class="dashboard-nav-item active"><i class="fas fa-store"></i> শপ প্রোফাইল (Editable)</a>
+        <a href="/reseller/settings.html" class="dashboard-nav-item"><i class="fas fa-cog"></i> সেটিংস</a>
+        <a href="javascript:void(0)" onclick="DCBD_Auth.logout()" class="dashboard-nav-item" style="color:var(--danger);"><i class="fas fa-sign-out-alt"></i> লগআউট</a>
       </nav>
     </aside>
 
     <main class="dashboard-main">
-      <div class="flex justify-between items-center mb-4">
-        <h1 class="section-title" style="font-size:1.6rem; margin-bottom:0;">শপ প্রোফাইল</h1>
-        <div><a href="/index.html" class="btn btn-sm btn-outline"><i class="fas fa-store"></i> শপে ফিরে যান</a></div>
+      <h1 class="section-title mb-4">রিসেলার শপ প্রোফাইল (Editable)</h1>
+      <div style="max-width:760px; background:var(--bg-surface); padding:2rem; border-radius:var(--radius-md); border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
+        <form id="reseller-profile-editable-form">
+          <div class="flex items-center gap-4 mb-4">
+            <img id="reseller-preview-logo" src="https://placehold.co/100?text=Shop+Logo" style="width:90px; height:90px; border-radius:var(--radius-sm); object-fit:cover; border:2px solid var(--primary);">
+            <div style="flex:1;">
+              <label class="form-label">শপ লোগো পরিবর্তন</label>
+              <input type="file" id="reseller-file-upload" accept="image/*" class="form-control mb-2" style="font-size:0.85rem;">
+              <input type="url" id="reseller-img-url" class="form-control" placeholder="লোগোর ইমেজ লিংক পেস্ট করুন">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="form-group"><label class="form-label">শপ আইডি</label><input type="text" id="res-shopid" class="form-control" readonly></div>
+            <div class="form-group"><label class="form-label">দোকানের নাম (Shop Name) *</label><input type="text" id="res-shopname" class="form-control" required></div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="form-group"><label class="form-label">প্রোপ্রাইটরের নাম *</label><input type="text" id="res-name" class="form-control" required></div>
+            <div class="form-group"><label class="form-label">মোবাইল নম্বর *</label><input type="tel" id="res-mobile" class="form-control" required></div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="form-group"><label class="form-label">ইমেইল</label><input type="email" id="res-mail" class="form-control"></div>
+            <div class="form-group"><label class="form-label">জন্ম তারিখ</label><input type="date" id="res-dob" class="form-control"></div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="form-group"><label class="form-label">জাতীয় পরিচয়পত্র নম্বর (NID)</label><input type="text" id="res-nid" class="form-control"></div>
+            <div class="form-group"><label class="form-label">ট্রেড লাইসেন্স নম্বর</label><input type="text" id="res-trade" class="form-control"></div>
+          </div>
+
+          <div class="form-group"><label class="form-label">দোকানের ঠিকানা</label><textarea id="res-address" class="form-control" rows="2"></textarea></div>
+
+          <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-save"></i> শপ প্রোফাইল সংরক্ষণ করুন</button>
+        </form>
       </div>
-      <p>শপ লোগো, ঠিকানা ও অন্যান্য তথ্য।</p>
     </main>
   </div>
 
   <script src="/assets/js/core/config.js"></script>
   <script src="/assets/js/core/storage.js"></script>
   <script src="/assets/js/core/state.js"></script>
-  <script src="/assets/js/core/security.js"></script>
-  <script src="/assets/js/core/validators.js"></script>
-  <script src="/assets/js/core/api.js"></script>
   <script src="/assets/js/core/auth.js"></script>
-  <script src="/assets/js/core/permissions.js"></script>
   <script src="/assets/js/core/router.js"></script>
-  <script src="/assets/js/components/toast.js"></script>
-  <script src="/assets/js/components/modal.js"></script>
   <script src="/assets/js/components/navbar.js"></script>
-  <script src="/assets/js/components/search.js"></script>
-  <script src="/assets/js/components/product-card.js"></script>
-  <script src="/assets/js/components/table.js"></script>
-  <script src="/assets/js/shop/products.js"></script>
-  <script src="/assets/js/shop/cart.js"></script>
-  <script src="/assets/js/shop/favourite.js"></script>
-  <script src="/assets/js/shop/voucher.js"></script>
-  
-  <script src="/assets/js/reseller/dashboard.js" onerror="this.remove()"></script>
-  <script src="/assets/js/reseller/orders.js" onerror="this.remove()"></script>
-  <script src="/assets/js/reseller/profile.js" onerror="this.remove()"></script>
-  <script src="/assets/js/reseller/payments.js" onerror="this.remove()"></script>
-  <script src="/assets/js/reseller/catalogue.js" onerror="this.remove()"></script>
-  <script src="/assets/js/reseller/sales-report.js" onerror="this.remove()"></script>
-  <script src="/assets/js/reseller/settings.js" onerror="this.remove()"></script>
-  
+  <script src="/assets/js/components/toast.js"></script>
+  <script src="/assets/js/components/forms.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       DCBD_Navbar.render();
       DCBD_Router.guard();
+      DCBD_ImagePreview.bind("reseller-file-upload", "reseller-img-url", "reseller-preview-logo");
+
+      const user = DCBD_Auth.getUser() || {};
+      document.getElementById("res-shopid").value = user.Shop_ID || "Dcbd-resale-0001";
+      document.getElementById("res-shopname").value = user.Shop_Name || "";
+      document.getElementById("res-name").value = user.Name || "";
+      document.getElementById("res-mobile").value = user.Mobile || "";
+      document.getElementById("res-mail").value = user.Mail || "";
+      document.getElementById("res-dob").value = user.Date_of_birth || "";
+      document.getElementById("res-nid").value = user.NID_Number || "";
+      document.getElementById("res-trade").value = user.Trade_Licence_No || "";
+      document.getElementById("res-address").value = user.Address || "";
+      if (user.Shop_logo) document.getElementById("reseller-preview-logo").src = user.Shop_logo;
+
+      document.getElementById("reseller-profile-editable-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        user.Shop_Name = document.getElementById("res-shopname").value;
+        user.Name = document.getElementById("res-name").value;
+        user.Mobile = document.getElementById("res-mobile").value;
+        user.Mail = document.getElementById("res-mail").value;
+        user.Date_of_birth = document.getElementById("res-dob").value;
+        user.NID_Number = document.getElementById("res-nid").value;
+        user.Trade_Licence_No = document.getElementById("res-trade").value;
+        user.Address = document.getElementById("res-address").value;
+        user.Shop_logo = document.getElementById("reseller-preview-logo").src;
+        DCBD_Auth.setUser(user);
+        DCBD_Toast.success("সফল", "রিসেলার প্রোফাইল সফলভাবে আপডেট করা হয়েছে!");
+      });
     });
   </script>
-  
 </body>
 </html>
