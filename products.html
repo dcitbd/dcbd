@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>সকল পণ্যসমূহ | Dream Cart BD</title>
+  <meta name="description" content="Dream Cart BD - সেরা অনলাইন শপিং প্ল্যাটফর্ম। পাইকারি ও খুচরা কেনাকাটার বিশ্বস্ত প্রতিষ্ঠান।">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/navbar.css">
+  <link rel="stylesheet" href="/assets/css/product-card.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <link rel="stylesheet" href="/assets/css/modal.css">
+  <link rel="stylesheet" href="/assets/css/notification.css">
+  <link rel="stylesheet" href="/assets/css/voucher.css">
+  <link rel="stylesheet" href="/assets/css/chat.css">
+  <link rel="stylesheet" href="/assets/css/animation.css">
+  <link rel="stylesheet" href="/assets/css/utilities.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+  
+</head>
+<body>
+  <div id="notice-bar-container"></div>
+  <div id="navbar-container"></div>
+
+  <main class="container mt-4">
+    <div class="flex justify-between items-center mb-4">
+      <div>
+        <h1 class="section-title">পণ্য ক্যাটালগ</h1>
+        <p class="section-subtitle">আমাদের সম্পূর্ণ ভাণ্ডার থেকে পছন্দের প্রোডাক্ট বেছে নিন (প্রতি পেজে ৬০টি)</p>
+      </div>
+      <div class="flex gap-2">
+        <select id="filter-price-sort" class="form-control" style="width:200px;">
+          <option value="">মূল্য অনুযায়ী সাজান</option>
+          <option value="low_to_high">কম থেকে বেশি মূল্য</option>
+          <option value="high_to_low">বেশি থেকে কম মূল্য</option>
+        </select>
+        <select id="filter-stock-status" class="form-control" style="width:160px;">
+          <option value="">সব স্টক</option>
+          <option value="in_stock">স্টকে আছে</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-4 gap-4">
+      <!-- Sidebar Filters -->
+      <aside style="grid-column: span 1;">
+        <div style="background:var(--bg-surface); padding:1.5rem; border-radius:var(--radius-md); border:1px solid var(--border-color); position:sticky; top:90px;">
+          <h3 class="mb-3 text-primary"><i class="fas fa-filter"></i> ক্যাটাগরি ফিল্টার</h3>
+          <div id="category-filter-tree" style="font-size:0.9rem;">লোড হচ্ছে...</div>
+
+          <hr style="margin:1.5rem 0; border:none; border-top:1px solid var(--border-color);">
+
+          <h3 class="mb-3 text-primary"><i class="fas fa-copyright"></i> ব্র্যান্ড ফিল্টার</h3>
+          <div id="brand-filter-list">লোড হচ্ছে...</div>
+
+          <button class="btn btn-outline w-full mt-4" onclick="window.location.href='/products.html'">
+            <i class="fas fa-undo"></i> রিসেট ফিল্টার
+          </button>
+        </div>
+      </aside>
+
+      <!-- Products Grid -->
+      <section style="grid-column: span 3;">
+        <div id="products-catalog-grid" class="grid grid-cols-3 gap-4">
+          <div class="text-center py-5" style="grid-column: span 3;">লোড হচ্ছে...</div>
+        </div>
+        <div id="products-pagination-container"></div>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+  <div id="fixed-action-buttons-root"></div>
+
+  <!-- Core Scripts -->
+  <script src="/assets/js/core/config.js"></script>
+  <script src="/assets/js/core/storage.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/security.js"></script>
+  <script src="/assets/js/core/validators.js"></script>
+  <script src="/assets/js/core/api.js"></script>
+  <script src="/assets/js/core/auth.js"></script>
+  <script src="/assets/js/core/permissions.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+
+  <!-- Components Scripts -->
+  <script src="/assets/js/components/toast.js"></script>
+  <script src="/assets/js/components/modal.js"></script>
+  <script src="/assets/js/components/notice-bar.js"></script>
+  <script src="/assets/js/components/search.js"></script>
+  <script src="/assets/js/components/product-card.js"></script>
+  <script src="/assets/js/components/filters.js"></script>
+  <script src="/assets/js/components/pagination.js"></script>
+  <script src="/assets/js/components/counter-card.js"></script>
+  <script src="/assets/js/components/table.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/footer.js"></script>
+
+  <!-- Shop Scripts -->
+  <script src="/assets/js/shop/products.js"></script>
+  <script src="/assets/js/shop/categories.js"></script>
+  <script src="/assets/js/shop/brands.js"></script>
+  <script src="/assets/js/shop/cart.js"></script>
+  <script src="/assets/js/shop/favourite.js"></script>
+  <script src="/assets/js/shop/order.js"></script>
+  <script src="/assets/js/shop/voucher.js"></script>
+  <script src="/assets/js/shop/tracking.js"></script>
+  <script src="/assets/js/shop/live-chat.js"></script>
+  <script src="/assets/js/shop/product-details.js"></script>
+  <script src="/assets/js/shop/landing-page.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      DCBD_NoticeBar.render();
+      DCBD_Navbar.render();
+      DCBD_Footer.render();
+      DCBD_Api.logViewer(document.title);
+    });
+  </script>
+  
+  <script>
+    let allProducts = [];
+    let currentFiltered = [];
+    let currentPage = 1;
+
+    async function loadCatalog() {
+      allProducts = await DCBD_Products.loadAll();
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get("q");
+      const brand = params.get("brand");
+      const cat = params.get("category");
+
+      let filtered = [...allProducts];
+      if (q) {
+        filtered = filtered.filter(p => p.P_Name.toLowerCase().includes(q.toLowerCase()) || p.SKU.toLowerCase().includes(q.toLowerCase()));
+      }
+      if (brand) filtered = filtered.filter(p => p.Brand === brand);
+      if (cat) filtered = filtered.filter(p => p.Category === cat);
+
+      currentFiltered = filtered;
+      renderCurrentPage(1);
+
+      // Render Categories Tree
+      const cats = await DCBD_Categories.loadAll();
+      const tree = DCBD_Categories.buildTree(cats);
+      let catHtml = "";
+      Object.keys(tree).forEach(c => {
+        catHtml += `<div style="margin-bottom:8px;"><strong><a href="/products.html?category=${encodeURIComponent(c)}">${c}</a></strong></div>`;
+      });
+      document.getElementById("category-filter-tree").innerHTML = catHtml;
+
+      // Render Brands List
+      const brands = await DCBD_Brands.loadAll();
+      let bHtml = "";
+      brands.forEach(b => {
+        bHtml += `<div><a href="/products.html?brand=${encodeURIComponent(b.Brand_Name)}">${b.Brand_Name}</a></div>`;
+      });
+      document.getElementById("brand-filter-list").innerHTML = bHtml;
+    }
+
+    function renderCurrentPage(page) {
+      currentPage = page;
+      const pagination = DCBD_Pagination.paginate(currentFiltered, page);
+      const container = document.getElementById("products-catalog-grid");
+      if (pagination.items.length === 0) {
+        container.innerHTML = `<div class="text-center py-5 text-muted" style="grid-column: span 3;">কোনো পণ্য পাওয়া যায়নি</div>`;
+      } else {
+        let html = "";
+        pagination.items.forEach(p => { html += DCBD_ProductCard.createHTML(p); });
+        container.innerHTML = html;
+      }
+      DCBD_Pagination.renderControls("products-pagination-container", pagination.currentPage, pagination.totalPages, "renderCurrentPage");
+    }
+
+    document.getElementById("filter-price-sort")?.addEventListener("change", (e) => {
+      if (e.target.value === "low_to_high") currentFiltered.sort((a,b) => parseFloat(a.Selling_Price) - parseFloat(b.Selling_Price));
+      else if (e.target.value === "high_to_low") currentFiltered.sort((a,b) => parseFloat(b.Selling_Price) - parseFloat(a.Selling_Price));
+      renderCurrentPage(1);
+    });
+
+    document.getElementById("filter-stock-status")?.addEventListener("change", (e) => {
+      if (e.target.value === "in_stock") {
+        currentFiltered = currentFiltered.filter(p => parseInt(p.Stock) > 0);
+      } else {
+        currentFiltered = [...allProducts];
+      }
+      renderCurrentPage(1);
+    });
+
+    document.addEventListener("DOMContentLoaded", loadCatalog);
+  </script>
+
+</body>
+</html>

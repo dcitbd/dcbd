@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>হোম - সেরা অনলাইন শপিং | Dream Cart BD</title>
+  <meta name="description" content="Dream Cart BD - সেরা অনলাইন শপিং প্ল্যাটফর্ম। পাইকারি ও খুচরা কেনাকাটার বিশ্বস্ত প্রতিষ্ঠান।">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/navbar.css">
+  <link rel="stylesheet" href="/assets/css/product-card.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <link rel="stylesheet" href="/assets/css/modal.css">
+  <link rel="stylesheet" href="/assets/css/notification.css">
+  <link rel="stylesheet" href="/assets/css/voucher.css">
+  <link rel="stylesheet" href="/assets/css/chat.css">
+  <link rel="stylesheet" href="/assets/css/animation.css">
+  <link rel="stylesheet" href="/assets/css/utilities.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+  
+</head>
+<body>
+  <div id="notice-bar-container"></div>
+  <div id="navbar-container"></div>
+
+  <main class="container mt-4">
+    <!-- Hero Banner Slider -->
+    <section class="banner-slider-container mb-5" style="border-radius:var(--radius-lg); overflow:hidden; position:relative; box-shadow:var(--shadow-lg);">
+      <div id="home-banners" style="position:relative; width:100%; min-height:360px; background:linear-gradient(135deg, #1e293b, #0f172a); display:flex; align-items:center; justify-content:space-between; padding:3rem; color:#fff;">
+        <div style="max-width:600px; z-index:2;">
+          <span class="badge badge-primary mb-2">স্পেশাল মেগা ডিসকাউন্ট</span>
+          <h1 style="font-size:2.5rem; font-weight:800; line-height:1.2; margin-bottom:1rem;">Dream Cart BD-তে সেরা গ্যাজেট ও লাইফস্টাইল কালেকশন</h1>
+          <p style="font-size:1.1rem; opacity:0.9; margin-bottom:1.5rem;">অনলাইনে অর্ডার করুন, পণ্য হাতে পেয়ে মূল্য পরিশোধ করুন! দ্রুততম সময়ে নির্ভরযোগ্য হোম ডেলিভারি।</p>
+          <div class="flex gap-3">
+            <a href="/products.html" class="btn btn-primary btn-lg"><i class="fas fa-shopping-bag"></i> এখনই কিনুন</a>
+            <a href="/categories.html" class="btn btn-outline btn-lg" style="color:#fff; border-color:#fff;">ক্যাটাগরি দেখুন</a>
+          </div>
+        </div>
+        <div style="z-index:2; text-align:right;">
+          <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500" alt="Special Product" style="border-radius:var(--radius-md); max-height:280px; box-shadow:var(--shadow-xl);">
+        </div>
+      </div>
+    </section>
+
+    <!-- Extra Notice / Opportunities (Small Card System) -->
+    <section class="mb-5">
+      <div class="grid grid-cols-4 gap-3">
+        <div class="counter-card">
+          <div class="counter-icon" style="background:#43a047;"><i class="fas fa-shipping-fast"></i></div>
+          <div class="counter-info"><h4>ফ্রি হোম ডেলিভারি</h4><div style="font-size:0.9rem; font-weight:600;">৳২,০০০+ অর্ডারে ফ্রি</div></div>
+        </div>
+        <div class="counter-card">
+          <div class="counter-icon" style="background:#0288d1;"><i class="fas fa-percentage"></i></div>
+          <div class="counter-info"><h4>অনলাইন ক্যাশব্যাক</h4><div style="font-size:0.9rem; font-weight:600;">অনলাইনে ৫% ছাড়</div></div>
+        </div>
+        <div class="counter-card">
+          <div class="counter-icon" style="background:#8e24aa;"><i class="fas fa-hand-holding-usd"></i></div>
+          <div class="counter-info"><h4>ক্যাশ অন ডেলিভারি</h4><div style="font-size:0.9rem; font-weight:600;">পণ্য দেখে মূল্য পরিশোধ</div></div>
+        </div>
+        <div class="counter-card">
+          <div class="counter-icon" style="background:#e53935;"><i class="fas fa-headset"></i></div>
+          <div class="counter-info"><h4>২৪/৭ সাপোর্ট</h4><div style="font-size:0.9rem; font-weight:600;">01581703822</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brands (Small Cards from Brands Sheet) -->
+    <section class="mb-5">
+      <div class="flex justify-between items-center mb-3">
+        <h2 class="section-title">টপ ব্র্যান্ডসমূহ</h2>
+        <a href="/brands.html" class="btn btn-sm btn-outline">সব ব্র্যান্ড দেখুন &rarr;</a>
+      </div>
+      <div id="home-brands-grid" class="grid grid-cols-4 gap-3"></div>
+    </section>
+
+    <!-- Category Products (6*2 Sliding Showcase) -->
+    <section class="mb-5">
+      <div class="flex justify-between items-center mb-3">
+        <h2 class="section-title">জনপ্রিয় প্রোডাক্টস</h2>
+        <a href="/products.html" class="btn btn-sm btn-primary">সব পণ্য দেখুন &rarr;</a>
+      </div>
+      <div id="home-featured-products" class="grid grid-cols-4 gap-4"></div>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+  <div id="fixed-action-buttons-root"></div>
+
+  <!-- Core Scripts -->
+  <script src="/assets/js/core/config.js"></script>
+  <script src="/assets/js/core/storage.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/security.js"></script>
+  <script src="/assets/js/core/validators.js"></script>
+  <script src="/assets/js/core/api.js"></script>
+  <script src="/assets/js/core/auth.js"></script>
+  <script src="/assets/js/core/permissions.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+
+  <!-- Components Scripts -->
+  <script src="/assets/js/components/toast.js"></script>
+  <script src="/assets/js/components/modal.js"></script>
+  <script src="/assets/js/components/notice-bar.js"></script>
+  <script src="/assets/js/components/search.js"></script>
+  <script src="/assets/js/components/product-card.js"></script>
+  <script src="/assets/js/components/filters.js"></script>
+  <script src="/assets/js/components/pagination.js"></script>
+  <script src="/assets/js/components/counter-card.js"></script>
+  <script src="/assets/js/components/table.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/footer.js"></script>
+
+  <!-- Shop Scripts -->
+  <script src="/assets/js/shop/products.js"></script>
+  <script src="/assets/js/shop/categories.js"></script>
+  <script src="/assets/js/shop/brands.js"></script>
+  <script src="/assets/js/shop/cart.js"></script>
+  <script src="/assets/js/shop/favourite.js"></script>
+  <script src="/assets/js/shop/order.js"></script>
+  <script src="/assets/js/shop/voucher.js"></script>
+  <script src="/assets/js/shop/tracking.js"></script>
+  <script src="/assets/js/shop/live-chat.js"></script>
+  <script src="/assets/js/shop/product-details.js"></script>
+  <script src="/assets/js/shop/landing-page.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      DCBD_NoticeBar.render();
+      DCBD_Navbar.render();
+      DCBD_Footer.render();
+      DCBD_Api.logViewer(document.title);
+    });
+  </script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      // Load Brands
+      const brands = await DCBD_Brands.loadAll();
+      const bContainer = document.getElementById("home-brands-grid");
+      if (bContainer) {
+        let bHtml = "";
+        brands.forEach(b => {
+          bHtml += `
+            <a href="/products.html?brand=${encodeURIComponent(b.Brand_Name)}" class="counter-card flex items-center gap-3">
+              <img src="${b.Brand_Image}" style="height:36px; object-fit:contain;">
+              <span style="font-weight:700; color:var(--text-primary);">${b.Brand_Name}</span>
+            </a>
+          `;
+        });
+        bContainer.innerHTML = bHtml;
+      }
+
+      // Load Featured Products
+      const products = await DCBD_Products.loadAll();
+      const pContainer = document.getElementById("home-featured-products");
+      if (pContainer) {
+        let pHtml = "";
+        products.slice(0, 8).forEach(p => {
+          pHtml += DCBD_ProductCard.createHTML(p);
+        });
+        pContainer.innerHTML = pHtml;
+      }
+    });
+  </script>
+
+</body>
+</html>

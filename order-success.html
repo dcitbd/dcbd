@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>অর্ডার সফল হয়েছে! | Dream Cart BD</title>
+  <meta name="description" content="Dream Cart BD - সেরা অনলাইন শপিং প্ল্যাটফর্ম। পাইকারি ও খুচরা কেনাকাটার বিশ্বস্ত প্রতিষ্ঠান।">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/navbar.css">
+  <link rel="stylesheet" href="/assets/css/product-card.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <link rel="stylesheet" href="/assets/css/modal.css">
+  <link rel="stylesheet" href="/assets/css/notification.css">
+  <link rel="stylesheet" href="/assets/css/voucher.css">
+  <link rel="stylesheet" href="/assets/css/chat.css">
+  <link rel="stylesheet" href="/assets/css/animation.css">
+  <link rel="stylesheet" href="/assets/css/utilities.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+  
+</head>
+<body>
+  <div id="notice-bar-container"></div>
+  <div id="navbar-container"></div>
+
+  <main class="container mt-4">
+    <div class="text-center mb-4">
+      <div style="font-size:3.5rem; color:var(--success); margin-bottom:10px;"><i class="fas fa-check-circle"></i></div>
+      <h1 class="text-success" style="font-size:2rem; font-weight:800;">আপনার অর্ডারটি সফলভাবে গৃহীত হয়েছে!</h1>
+      <p class="text-muted">আপনার অর্ডারের মেমো নিচে প্রদর্শিত হলো। এটি প্রিন্ট অথবা সংরক্ষণ করে রাখুন।</p>
+    </div>
+
+    <div id="voucher-render-area"></div>
+
+    <div class="flex justify-center gap-3 mt-4 no-print">
+      <button class="btn btn-primary btn-lg" onclick="window.print()"><i class="fas fa-print"></i> ভাউচার প্রিন্ট করুন</button>
+      <a href="/index.html" class="btn btn-outline btn-lg"><i class="fas fa-home"></i> হোম পেজে ফিরে যান</a>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+  <div id="fixed-action-buttons-root"></div>
+
+  <!-- Core Scripts -->
+  <script src="/assets/js/core/config.js"></script>
+  <script src="/assets/js/core/storage.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/security.js"></script>
+  <script src="/assets/js/core/validators.js"></script>
+  <script src="/assets/js/core/api.js"></script>
+  <script src="/assets/js/core/auth.js"></script>
+  <script src="/assets/js/core/permissions.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+
+  <!-- Components Scripts -->
+  <script src="/assets/js/components/toast.js"></script>
+  <script src="/assets/js/components/modal.js"></script>
+  <script src="/assets/js/components/notice-bar.js"></script>
+  <script src="/assets/js/components/search.js"></script>
+  <script src="/assets/js/components/product-card.js"></script>
+  <script src="/assets/js/components/filters.js"></script>
+  <script src="/assets/js/components/pagination.js"></script>
+  <script src="/assets/js/components/counter-card.js"></script>
+  <script src="/assets/js/components/table.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/footer.js"></script>
+
+  <!-- Shop Scripts -->
+  <script src="/assets/js/shop/products.js"></script>
+  <script src="/assets/js/shop/categories.js"></script>
+  <script src="/assets/js/shop/brands.js"></script>
+  <script src="/assets/js/shop/cart.js"></script>
+  <script src="/assets/js/shop/favourite.js"></script>
+  <script src="/assets/js/shop/order.js"></script>
+  <script src="/assets/js/shop/voucher.js"></script>
+  <script src="/assets/js/shop/tracking.js"></script>
+  <script src="/assets/js/shop/live-chat.js"></script>
+  <script src="/assets/js/shop/product-details.js"></script>
+  <script src="/assets/js/shop/landing-page.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      DCBD_NoticeBar.render();
+      DCBD_Navbar.render();
+      DCBD_Footer.render();
+      DCBD_Api.logViewer(document.title);
+    });
+  </script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const orderData = sessionStorage.getItem("dcbd_latest_order");
+      const order = orderData ? JSON.parse(orderData) : {
+        OrderID: new URLSearchParams(window.location.search).get("orderId") || "DCBD-123456",
+        Date: new Date().toLocaleString(),
+        Customer_Name: "সম্মানিত গ্রাহক",
+        Phone: "018xxxxxxx",
+        Address: "কুমিল্লা, বাংলাদেশ",
+        Products: "Smart Stainless Steel Multifunctional Ring",
+        Quantity: 1,
+        Total_Amount: "194",
+        Payment_method: "Cash On Delivery (COD)",
+        Payment_Status: "COD",
+        Order_Status: "Order Placed"
+      };
+
+      document.getElementById("voucher-render-area").innerHTML = DCBD_Voucher.renderVoucher(order);
+    });
+  </script>
+
+</body>
+</html>

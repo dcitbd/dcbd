@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>অর্ডার কনফার্মেশন ফর্ম | Dream Cart BD</title>
+  <meta name="description" content="Dream Cart BD - সেরা অনলাইন শপিং প্ল্যাটফর্ম। পাইকারি ও খুচরা কেনাকাটার বিশ্বস্ত প্রতিষ্ঠান।">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/navbar.css">
+  <link rel="stylesheet" href="/assets/css/product-card.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <link rel="stylesheet" href="/assets/css/modal.css">
+  <link rel="stylesheet" href="/assets/css/notification.css">
+  <link rel="stylesheet" href="/assets/css/voucher.css">
+  <link rel="stylesheet" href="/assets/css/chat.css">
+  <link rel="stylesheet" href="/assets/css/animation.css">
+  <link rel="stylesheet" href="/assets/css/utilities.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+  
+</head>
+<body>
+  <div id="notice-bar-container"></div>
+  <div id="navbar-container"></div>
+
+  <main class="container mt-4">
+    <h1 class="section-title mb-3">চেকআউট ও অর্ডার কনফার্মেশন</h1>
+    <p class="section-subtitle">অনুগ্রহ করে আপনার সঠিক ঠিকানা ও যোগাযোগ নম্বর প্রদান করুন।</p>
+
+    <form id="checkout-order-form">
+      <div class="grid grid-cols-3 gap-4">
+        <!-- Delivery and Customer Details -->
+        <div style="grid-column: span 2;">
+          <div style="background:var(--bg-surface); padding:2rem; border-radius:var(--radius-md); border:1px solid var(--border-color); box-shadow:var(--shadow-sm); margin-bottom:1.5rem;">
+            <h3 class="mb-4 text-primary"><i class="fas fa-user-edit"></i> গ্রাহকের তথ্য</h3>
+            
+            <div class="form-group">
+              <label class="form-label" for="customer_name">আপনার নাম *</label>
+              <input type="text" id="customer_name" class="form-control" placeholder="সম্পূর্ণ নাম লিখুন" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="customer_phone">মোবাইল নম্বর * (১১ ডিজিট)</label>
+              <input type="tel" id="customer_phone" class="form-control" placeholder="017xxxxxxxx" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="customer_address">ডেলিভারি ঠিকানা *</label>
+              <textarea id="customer_address" class="form-control" rows="3" placeholder="জেলা, থানা/উপজেলা, গ্রাম বা রোড ও বাড়ি নম্বর বিস্তারিত লিখুন" required></textarea>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-surface); padding:2rem; border-radius:var(--radius-md); border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
+            <h3 class="mb-4 text-primary"><i class="fas fa-truck"></i> ডেলিভারি এলাকা ও খরচ</h3>
+            <div class="grid grid-cols-2 gap-3 mb-4">
+              <label class="counter-card" style="cursor:pointer;">
+                <input type="radio" name="delivery_area" value="dhaka" checked>
+                <div style="margin-left:10px;"><strong>ঢাকার ভিতরে</strong><div>চার্জ: ৳৯০</div></div>
+              </label>
+              <label class="counter-card" style="cursor:pointer;">
+                <input type="radio" name="delivery_area" value="cumilla">
+                <div style="margin-left:10px;"><strong>কুমিল্লার ভিতরে</strong><div>চার্জ: ৳৭০</div></div>
+              </label>
+              <label class="counter-card" style="cursor:pointer;">
+                <input type="radio" name="delivery_area" value="outside">
+                <div style="margin-left:10px;"><strong>ঢাকার বাইরে (অন্যান্য জেলা)</strong><div>চার্জ: ৳১২০</div></div>
+              </label>
+              <label class="counter-card" style="cursor:pointer;">
+                <input type="radio" name="delivery_area" value="pickup">
+                <div style="margin-left:10px;"><strong>অফিস পিকআপ (কুমিল্লা)</strong><div>চার্জ: ৳০ (ফ্রি)</div></div>
+              </label>
+            </div>
+
+            <h3 class="mb-4 text-primary"><i class="fas fa-wallet"></i> পেমেন্ট মেথড</h3>
+            <div class="form-group">
+              <select id="payment_method" class="form-control form-select">
+                <option value="Cash On Delivery (COD)">Cash On Delivery (COD)</option>
+                <option value="Bkash Personal">Bkash Personal (01879653143)</option>
+                <option value="Bkash Payment">Bkash Payment (01581703822)</option>
+                <option value="Nagad Personal">Nagad Personal (01879653143)</option>
+                <option value="Rocket Personal">Rocket Personal (01581703822)</option>
+                <option value="Bank Account">Bank Account (IBBL)</option>
+                <option value="Cash Payment">Cash Payment</option>
+              </select>
+            </div>
+
+            <div id="payment-account-info" style="display:none; background:#f0fdf4; border:1px solid #bbf7d0; padding:1.25rem; border-radius:var(--radius-sm); margin-bottom:1.25rem;">
+              <h4 style="color:#15803d; font-size:0.95rem; margin-bottom:6px;">পেমেন্ট নির্দেশনা:</h4>
+              <p style="font-size:0.875rem;">নির্বাচিত পেমেন্ট নম্বরে টাকা পাঠিয়ে নিচে ট্রানজেকশন আইডি (TrxID) প্রদান করুন।</p>
+              <div class="form-group mt-3">
+                <label class="form-label" for="transaction_id">Transaction ID (TrxID) *</label>
+                <input type="text" id="transaction_id" class="form-control" placeholder="যেমন: 9J4K2L8M">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Summary Card -->
+        <div>
+          <div style="background:var(--bg-surface); padding:2rem; border-radius:var(--radius-md); border:1px solid var(--border-color); position:sticky; top:90px; box-shadow:var(--shadow-md);">
+            <h3 class="mb-3 text-primary">অর্ডার সারাংশ</h3>
+            <div id="order-products-summary" class="mb-3"></div>
+
+            <div class="flex justify-between py-1">
+              <span>সাবটোটাল:</span>
+              <strong id="summary-subtotal">৳০</strong>
+            </div>
+
+            <div class="flex justify-between py-1">
+              <span>ডেলিভারি চার্জ:</span>
+              <span id="summary-delivery">৳৯০</span>
+            </div>
+
+            <div id="free-delivery-badge" class="badge badge-success hidden mb-2">৳২,০০০+ অর্ডারে ফ্রি ডেলিভারি!</div>
+
+            <div class="flex justify-between py-1">
+              <span>অনলাইন ডিসকাউন্ট (৫%):</span>
+              <span id="summary-discount" style="color:var(--success);">-৳০</span>
+            </div>
+            <div id="online-discount-badge" class="badge badge-primary hidden mb-2">৫% অনলাইন পেমেন্ট ছাড় প্রযোজ্য!</div>
+
+            <hr style="margin:1rem 0; border:none; border-top:1px solid var(--border-color);">
+
+            <div class="flex justify-between py-2" style="font-size:1.35rem; font-weight:800; color:var(--primary);">
+              <span>সর্বমোট:</span>
+              <span id="summary-total">৳০</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg w-full mt-3">
+              <i class="fas fa-check-circle"></i> অর্ডার নিশ্চিত করুন
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <div id="footer-container"></div>
+  <div id="fixed-action-buttons-root"></div>
+
+  <!-- Core Scripts -->
+  <script src="/assets/js/core/config.js"></script>
+  <script src="/assets/js/core/storage.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/security.js"></script>
+  <script src="/assets/js/core/validators.js"></script>
+  <script src="/assets/js/core/api.js"></script>
+  <script src="/assets/js/core/auth.js"></script>
+  <script src="/assets/js/core/permissions.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+
+  <!-- Components Scripts -->
+  <script src="/assets/js/components/toast.js"></script>
+  <script src="/assets/js/components/modal.js"></script>
+  <script src="/assets/js/components/notice-bar.js"></script>
+  <script src="/assets/js/components/search.js"></script>
+  <script src="/assets/js/components/product-card.js"></script>
+  <script src="/assets/js/components/filters.js"></script>
+  <script src="/assets/js/components/pagination.js"></script>
+  <script src="/assets/js/components/counter-card.js"></script>
+  <script src="/assets/js/components/table.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/footer.js"></script>
+
+  <!-- Shop Scripts -->
+  <script src="/assets/js/shop/products.js"></script>
+  <script src="/assets/js/shop/categories.js"></script>
+  <script src="/assets/js/shop/brands.js"></script>
+  <script src="/assets/js/shop/cart.js"></script>
+  <script src="/assets/js/shop/favourite.js"></script>
+  <script src="/assets/js/shop/order.js"></script>
+  <script src="/assets/js/shop/voucher.js"></script>
+  <script src="/assets/js/shop/tracking.js"></script>
+  <script src="/assets/js/shop/live-chat.js"></script>
+  <script src="/assets/js/shop/product-details.js"></script>
+  <script src="/assets/js/shop/landing-page.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      DCBD_NoticeBar.render();
+      DCBD_Navbar.render();
+      DCBD_Footer.render();
+      DCBD_Api.logViewer(document.title);
+    });
+  </script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      DCBD_Order.initForm();
+    });
+  </script>
+
+</body>
+</html>

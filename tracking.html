@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>অর্ডার ট্র্যাকিং | Dream Cart BD</title>
+  <meta name="description" content="Dream Cart BD - সেরা অনলাইন শপিং প্ল্যাটফর্ম। পাইকারি ও খুচরা কেনাকাটার বিশ্বস্ত প্রতিষ্ঠান।">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/navbar.css">
+  <link rel="stylesheet" href="/assets/css/product-card.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <link rel="stylesheet" href="/assets/css/modal.css">
+  <link rel="stylesheet" href="/assets/css/notification.css">
+  <link rel="stylesheet" href="/assets/css/voucher.css">
+  <link rel="stylesheet" href="/assets/css/chat.css">
+  <link rel="stylesheet" href="/assets/css/animation.css">
+  <link rel="stylesheet" href="/assets/css/utilities.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+  
+</head>
+<body>
+  <div id="notice-bar-container"></div>
+  <div id="navbar-container"></div>
+
+  <main class="container mt-4">
+    <div style="max-width:650px; margin:0 auto; background:var(--bg-surface); padding:2.5rem; border-radius:var(--radius-md); border:1px solid var(--border-color); box-shadow:var(--shadow-md);">
+      <h1 class="section-title mb-3 text-center">আপনার অর্ডার ট্র্যাক করুন</h1>
+      <p class="text-center text-muted mb-4">অর্ডার আইডি অথবা অর্ডার করার সময় ব্যবহৃত মোবাইল নম্বরটি লিখুন।</p>
+      
+      <div class="flex gap-2 mb-4">
+        <input type="text" id="track-input" class="form-control" placeholder="যেমন: DCBD-547049 বা 018xxxxxxxx">
+        <button id="track-btn" class="btn btn-primary" style="white-space:nowrap;"><i class="fas fa-search"></i> ট্র্যাক করুন</button>
+      </div>
+
+      <div id="tracking-result-box" style="display:none; border-top:1px solid var(--border-color); padding-top:1.5rem;"></div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+  <div id="fixed-action-buttons-root"></div>
+
+  <!-- Core Scripts -->
+  <script src="/assets/js/core/config.js"></script>
+  <script src="/assets/js/core/storage.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/security.js"></script>
+  <script src="/assets/js/core/validators.js"></script>
+  <script src="/assets/js/core/api.js"></script>
+  <script src="/assets/js/core/auth.js"></script>
+  <script src="/assets/js/core/permissions.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+
+  <!-- Components Scripts -->
+  <script src="/assets/js/components/toast.js"></script>
+  <script src="/assets/js/components/modal.js"></script>
+  <script src="/assets/js/components/notice-bar.js"></script>
+  <script src="/assets/js/components/search.js"></script>
+  <script src="/assets/js/components/product-card.js"></script>
+  <script src="/assets/js/components/filters.js"></script>
+  <script src="/assets/js/components/pagination.js"></script>
+  <script src="/assets/js/components/counter-card.js"></script>
+  <script src="/assets/js/components/table.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/footer.js"></script>
+
+  <!-- Shop Scripts -->
+  <script src="/assets/js/shop/products.js"></script>
+  <script src="/assets/js/shop/categories.js"></script>
+  <script src="/assets/js/shop/brands.js"></script>
+  <script src="/assets/js/shop/cart.js"></script>
+  <script src="/assets/js/shop/favourite.js"></script>
+  <script src="/assets/js/shop/order.js"></script>
+  <script src="/assets/js/shop/voucher.js"></script>
+  <script src="/assets/js/shop/tracking.js"></script>
+  <script src="/assets/js/shop/live-chat.js"></script>
+  <script src="/assets/js/shop/product-details.js"></script>
+  <script src="/assets/js/shop/landing-page.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      DCBD_NoticeBar.render();
+      DCBD_Navbar.render();
+      DCBD_Footer.render();
+      DCBD_Api.logViewer(document.title);
+    });
+  </script>
+  
+  <script>
+    document.getElementById("track-btn")?.addEventListener("click", async () => {
+      const q = document.getElementById("track-input")?.value;
+      if (!q) { DCBD_Toast.warning("সতর্কতা", "দয়া করে অর্ডার আইডি বা ফোন নম্বর লিখুন"); return; }
+      
+      const res = await DCBD_Tracking.track(q);
+      const box = document.getElementById("tracking-result-box");
+      box.style.display = "block";
+      box.innerHTML = `
+        <h3 class="text-primary mb-3">অর্ডার বিবরণ</h3>
+        <p><strong>অর্ডার আইডি:</strong> ${res.OrderID}</p>
+        <p><strong>গ্রাহকের নাম:</strong> ${res.Customer_Name}</p>
+        <p><strong>পণ্য:</strong> ${res.Products}</p>
+        <p><strong>মোট টাকা:</strong> ৳${res.Total_Amount}</p>
+        <p><strong>বর্তমান স্ট্যাটাস:</strong> <span class="badge badge-info" style="font-size:0.95rem;">${res.Order_Status}</span></p>
+      `;
+    });
+  </script>
+
+</body>
+</html>

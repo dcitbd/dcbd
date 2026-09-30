@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>রেজিস্ট্রেশন | Dream Cart BD</title>
+  <meta name="description" content="Dream Cart BD - সেরা অনলাইন শপিং প্ল্যাটফর্ম। পাইকারি ও খুচরা কেনাকাটার বিশ্বস্ত প্রতিষ্ঠান।">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/navbar.css">
+  <link rel="stylesheet" href="/assets/css/product-card.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <link rel="stylesheet" href="/assets/css/modal.css">
+  <link rel="stylesheet" href="/assets/css/notification.css">
+  <link rel="stylesheet" href="/assets/css/voucher.css">
+  <link rel="stylesheet" href="/assets/css/chat.css">
+  <link rel="stylesheet" href="/assets/css/animation.css">
+  <link rel="stylesheet" href="/assets/css/utilities.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+  
+</head>
+<body>
+  <div id="notice-bar-container"></div>
+  <div id="navbar-container"></div>
+
+  <main class="container mt-5">
+    <div style="max-width:550px; margin:0 auto; background:var(--bg-surface); padding:2.5rem; border-radius:var(--radius-md); border:1px solid var(--border-color); box-shadow:var(--shadow-xl);">
+      <h2 class="text-center text-primary mb-2">নতুন অ্যাকাউন্ট তৈরি করুন</h2>
+      <p class="text-center text-muted mb-4">কাস্টমার অ্যাকাউন্ট তৈরি করে দ্রুত অর্ডার করুন</p>
+
+      <form id="customer-register-form">
+        <div class="form-group">
+          <label class="form-label" for="reg_name">সম্পূর্ণ নাম *</label>
+          <input type="text" id="reg_name" class="form-control" placeholder="আপনার নাম" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg_phone">মোবাইল নম্বর *</label>
+          <input type="tel" id="reg_phone" class="form-control" placeholder="017xxxxxxxx" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg_email">ইমেইল (ঐচ্ছিক)</label>
+          <input type="email" id="reg_email" class="form-control" placeholder="example@gmail.com">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg_address">ঠিকানা *</label>
+          <textarea id="reg_address" class="form-control" rows="2" placeholder="আপনার স্থায়ী বা বর্তমান ঠিকানা" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg_password">পাসওয়ার্ড *</label>
+          <input type="password" id="reg_password" class="form-control" placeholder="কমপক্ষে ৬ অক্ষরের পাসওয়ার্ড" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg w-full mt-3">
+          <i class="fas fa-user-plus"></i> রেজিস্টার সম্পন্ন করুন
+        </button>
+
+        <div class="text-center mt-4" style="font-size:0.9rem;">
+          ইতিমধ্যে অ্যাকাউন্ট আছে? <a href="/login.html" style="color:var(--primary); font-weight:700;">লগইন করুন</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+  <div id="fixed-action-buttons-root"></div>
+
+  <!-- Core Scripts -->
+  <script src="/assets/js/core/config.js"></script>
+  <script src="/assets/js/core/storage.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/security.js"></script>
+  <script src="/assets/js/core/validators.js"></script>
+  <script src="/assets/js/core/api.js"></script>
+  <script src="/assets/js/core/auth.js"></script>
+  <script src="/assets/js/core/permissions.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+
+  <!-- Components Scripts -->
+  <script src="/assets/js/components/toast.js"></script>
+  <script src="/assets/js/components/modal.js"></script>
+  <script src="/assets/js/components/notice-bar.js"></script>
+  <script src="/assets/js/components/search.js"></script>
+  <script src="/assets/js/components/product-card.js"></script>
+  <script src="/assets/js/components/filters.js"></script>
+  <script src="/assets/js/components/pagination.js"></script>
+  <script src="/assets/js/components/counter-card.js"></script>
+  <script src="/assets/js/components/table.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/footer.js"></script>
+
+  <!-- Shop Scripts -->
+  <script src="/assets/js/shop/products.js"></script>
+  <script src="/assets/js/shop/categories.js"></script>
+  <script src="/assets/js/shop/brands.js"></script>
+  <script src="/assets/js/shop/cart.js"></script>
+  <script src="/assets/js/shop/favourite.js"></script>
+  <script src="/assets/js/shop/order.js"></script>
+  <script src="/assets/js/shop/voucher.js"></script>
+  <script src="/assets/js/shop/tracking.js"></script>
+  <script src="/assets/js/shop/live-chat.js"></script>
+  <script src="/assets/js/shop/product-details.js"></script>
+  <script src="/assets/js/shop/landing-page.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      DCBD_NoticeBar.render();
+      DCBD_Navbar.render();
+      DCBD_Footer.render();
+      DCBD_Api.logViewer(document.title);
+    });
+  </script>
+  
+  <script>
+    document.getElementById("customer-register-form")?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const user = {
+        USER_ID: "CUST-" + Math.floor(1000 + Math.random() * 9000),
+        Name: document.getElementById("reg_name").value,
+        Mobile: document.getElementById("reg_phone").value,
+        Mail: document.getElementById("reg_email").value,
+        Address: document.getElementById("reg_address").value,
+        User_ID: document.getElementById("reg_phone").value,
+        Password: document.getElementById("reg_password").value,
+        Status: "Active",
+        role: "Customer"
+      };
+      DCBD_Auth.setUser(user);
+      DCBD_Toast.success("স্বাগতম!", "অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে।");
+      setTimeout(() => window.location.href = "/customer/dashboard.html", 800);
+    });
+  </script>
+
+</body>
+</html>
