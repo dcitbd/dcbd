@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Banner (Image Preview) | Dream Cart BD Admin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/navbar.css">
+  <link rel="stylesheet" href="/assets/css/dashboard.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <link rel="stylesheet" href="/assets/css/notification.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+  <div class="dashboard-layout">
+    <main class="dashboard-main" style="max-width:800px; margin:2rem auto;">
+      <h1 class="section-title mb-4">নতুন ব্যানার যোগ করুন (Add Banner)</h1>
+      <div style="background:var(--bg-surface); padding:2rem; border-radius:var(--radius-md); border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
+        <form id="admin-add-banner-form">
+          <div class="mb-4 p-3 rounded-md" style="background:var(--bg-subtle);">
+            <div style="text-align:center; margin-bottom:10px;">
+              <img id="banner-preview-img" src="https://placehold.co/600x200?text=Banner+Preview" style="width:100%; max-height:220px; object-fit:cover; border-radius:var(--radius-sm); border:2px solid var(--primary);">
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="form-label">কম্পিউটার থেকে ব্যানার আপলোড</label>
+                <input type="file" id="banner-file" accept="image/*" class="form-control">
+              </div>
+              <div>
+                <label class="form-label">অথবা অনলাইন ব্যানার ইমেজ লিংক</label>
+                <input type="url" id="banner-link" class="form-control" placeholder="https://example.com/banner.jpg">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group"><label class="form-label">ব্যানারের শিরোনাম *</label><input type="text" id="ban_title" class="form-control" required placeholder="যেমন: ঈদ মেগা অফার"></div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="form-group"><label class="form-label">টার্গেট লিংক</label><input type="text" id="ban_href" class="form-control" value="/products.html"></div>
+            <div class="form-group"><label class="form-label">ক্রম (Order)</label><input type="number" id="ban_sort" class="form-control" value="1"></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-plus"></i> ব্যানার Banners শীটে সংরক্ষণ করুন</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="/assets/js/core/config.js"></script>
+  <script src="/assets/js/core/auth.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/toast.js"></script>
+  <script src="/assets/js/components/forms.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      DCBD_Navbar.render();
+      DCBD_Router.guard();
+      DCBD_ImagePreview.bind("banner-file", "banner-link", "banner-preview-img");
+
+      document.getElementById("admin-add-banner-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        DCBD_Toast.success("সফল", "ব্যানার সফলভাবে Banners শীটে সংরক্ষণ করা হয়েছে!");
+        setTimeout(() => window.location.href = "/admin/banners/index.html", 1000);
+      });
+    });
+  </script>
+</body>
+</html>

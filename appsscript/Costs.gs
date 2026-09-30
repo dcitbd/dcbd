@@ -1,0 +1,1 @@
+function getAllCosts() { return getSheetDataAsObjects(CONFIG.SHEET_NAMES.COSTS); }

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>নতুন ব্র্যান্ড যোগ | Dream Cart BD</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/navbar.css">
+  <link rel="stylesheet" href="/assets/css/dashboard.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <link rel="stylesheet" href="/assets/css/modal.css">
+  <link rel="stylesheet" href="/assets/css/notification.css">
+  <link rel="stylesheet" href="/assets/css/voucher.css">
+  <link rel="stylesheet" href="/assets/css/table.css" onerror="this.remove()">
+  <link rel="stylesheet" href="/assets/css/utilities.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+  <link rel="stylesheet" href="/assets/css/print.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <div class="dashboard-layout">
+    <aside class="dashboard-sidebar">
+      <div class="mb-4 text-center">
+        <h4 style="color:var(--primary); font-weight:800;">Admin Portal</h4>
+        <div style="font-size:0.8rem; color:var(--text-muted);">Dream Cart BD</div>
+      </div>
+      <nav class="dashboard-nav">
+        
+          <a href="/admin/dashboard.html" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> ড্যাশবোর্ড</a>
+          <a href="/admin/products/index.html" class="dashboard-nav-item"><i class="fas fa-boxes"></i> প্রোডাক্টস</a>
+          <a href="/admin/categories/index.html" class="dashboard-nav-item"><i class="fas fa-sitemap"></i> ক্যাটাগরিজ</a>
+          <a href="/admin/brands/index.html" class="dashboard-nav-item"><i class="fas fa-copyright"></i> ব্র্যান্ডস</a>
+          <a href="/admin/orders/index.html" class="dashboard-nav-item"><i class="fas fa-shopping-bag"></i> অর্ডারস</a>
+          <a href="/admin/orders/incomplete.html" class="dashboard-nav-item"><i class="fas fa-clock"></i> অসম্পূর্ণ অর্ডার</a>
+          <a href="/admin/customers/index.html" class="dashboard-nav-item"><i class="fas fa-users"></i> কাস্টমারস</a>
+          <a href="/admin/resellers/index.html" class="dashboard-nav-item"><i class="fas fa-store"></i> রিসেলার্স</a>
+          <a href="/admin/wholesalers/index.html" class="dashboard-nav-item"><i class="fas fa-warehouse"></i> হোলসেলার্স</a>
+          <a href="/admin/payments/reseller-requests.html" class="dashboard-nav-item"><i class="fas fa-money-check-alt"></i> পেমেন্টস</a>
+          <a href="/admin/banners/index.html" class="dashboard-nav-item"><i class="fas fa-images"></i> ব্যানার্স</a>
+          <a href="/admin/landing-pages/index.html" class="dashboard-nav-item"><i class="fas fa-pager"></i> ল্যান্ডিং পেজ</a>
+          <a href="/admin/reports/sales.html" class="dashboard-nav-item"><i class="fas fa-chart-pie"></i> রিপোর্টস</a>
+          <a href="/admin/logs/worker-logs.html" class="dashboard-nav-item"><i class="fas fa-history"></i> ওয়ার্কার লগ</a>
+          <a href="/admin/settings/site.html" class="dashboard-nav-item"><i class="fas fa-cogs"></i> সেটিংস</a>
+          <a href="javascript:void(0)" onclick="DCBD_Auth.logout()" class="dashboard-nav-item" style="color:var(--danger);"><i class="fas fa-sign-out-alt"></i> লগআউট</a>
+        
+      </nav>
+    </aside>
+
+    <main class="dashboard-main">
+      <div class="flex justify-between items-center mb-4">
+        <h1 class="section-title" style="font-size:1.6rem; margin-bottom:0;">নতুন ব্র্যান্ড যোগ</h1>
+        <div><a href="/index.html" class="btn btn-sm btn-outline"><i class="fas fa-store"></i> শপে ফিরে যান</a></div>
+      </div>
+      <p>ব্র্যান্ডের নাম, লোগো ও বিবরণ পূরণ করে Brands শীটে সংরক্ষণ করুন।</p>
+    </main>
+  </div>
+
+  <script src="/assets/js/core/config.js"></script>
+  <script src="/assets/js/core/storage.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/security.js"></script>
+  <script src="/assets/js/core/validators.js"></script>
+  <script src="/assets/js/core/api.js"></script>
+  <script src="/assets/js/core/auth.js"></script>
+  <script src="/assets/js/core/permissions.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+  <script src="/assets/js/components/toast.js"></script>
+  <script src="/assets/js/components/modal.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/search.js"></script>
+  <script src="/assets/js/components/product-card.js"></script>
+  <script src="/assets/js/components/table.js"></script>
+  <script src="/assets/js/shop/products.js"></script>
+  <script src="/assets/js/shop/cart.js"></script>
+  <script src="/assets/js/shop/favourite.js"></script>
+  <script src="/assets/js/shop/voucher.js"></script>
+  
+  <script src="/assets/js/admin/dashboard.js" onerror="this.remove()"></script>
+  <script src="/assets/js/admin/orders.js" onerror="this.remove()"></script>
+  <script src="/assets/js/admin/profile.js" onerror="this.remove()"></script>
+  <script src="/assets/js/admin/payments.js" onerror="this.remove()"></script>
+  <script src="/assets/js/admin/catalogue.js" onerror="this.remove()"></script>
+  <script src="/assets/js/admin/sales-report.js" onerror="this.remove()"></script>
+  <script src="/assets/js/admin/settings.js" onerror="this.remove()"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      DCBD_Navbar.render();
+      DCBD_Router.guard();
+    });
+  </script>
+  
+</body>
+</html>

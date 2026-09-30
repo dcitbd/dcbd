@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product (Image Upload & Link Paste Preview) | Dream Cart BD Admin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/navbar.css">
+  <link rel="stylesheet" href="/assets/css/dashboard.css">
+  <link rel="stylesheet" href="/assets/css/admin.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <link rel="stylesheet" href="/assets/css/notification.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+  <div class="dashboard-layout">
+    <aside class="dashboard-sidebar">
+      <div class="mb-4 text-center">
+        <h4 style="color:var(--primary); font-weight:800;">Admin Center</h4>
+        <div style="font-size:0.8rem; color:var(--text-muted);">Dream Cart BD</div>
+      </div>
+      <nav class="dashboard-nav">
+        <a href="/admin/dashboard.html" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> ড্যাশবোর্ড</a>
+        <a href="/admin/products/index.html" class="dashboard-nav-item active"><i class="fas fa-boxes"></i> প্রোডাক্টস</a>
+        <a href="/admin/categories/index.html" class="dashboard-nav-item"><i class="fas fa-sitemap"></i> ক্যাটাগরিজ</a>
+        <a href="/admin/brands/index.html" class="dashboard-nav-item"><i class="fas fa-copyright"></i> ব্র্যান্ডস</a>
+        <a href="/admin/orders/index.html" class="dashboard-nav-item"><i class="fas fa-shopping-bag"></i> অর্ডারস</a>
+        <a href="/admin/customers/index.html" class="dashboard-nav-item"><i class="fas fa-users"></i> কাস্টমারস</a>
+        <a href="/admin/resellers/index.html" class="dashboard-nav-item"><i class="fas fa-store"></i> রিসেলার্স</a>
+        <a href="/admin/wholesalers/index.html" class="dashboard-nav-item"><i class="fas fa-warehouse"></i> হোলসেলার্স</a>
+        <a href="/admin/banners/index.html" class="dashboard-nav-item"><i class="fas fa-images"></i> ব্যানার্স</a>
+        <a href="/admin/settings/site.html" class="dashboard-nav-item"><i class="fas fa-cogs"></i> সেটিংস</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard-main">
+      <div class="flex justify-between items-center mb-4">
+        <h1 class="section-title mb-0">নতুন প্রোডাক্ট যুক্ত করুন (Add Product)</h1>
+        <a href="/admin/products/index.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> প্রোডাক্ট তালিকায় ফিরে যান</a>
+      </div>
+
+      <div style="background:var(--bg-surface); padding:2rem; border-radius:var(--radius-md); border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
+        <form id="admin-add-product-form">
+          <!-- Image Upload / Paste with Real-time Preview -->
+          <div class="mb-4 p-4 rounded-md" style="background:var(--bg-subtle); border:2px dashed var(--border-color);">
+            <h4 class="mb-3 text-primary"><i class="fas fa-image"></i> প্রোডাক্ট ছবি আপলোড ও প্রিভিউ (Image upload from computer and link paste - need preview)</h4>
+            <div class="flex items-start gap-4">
+              <div style="text-align:center; min-width:140px;">
+                <img id="prod-add-preview" src="https://placehold.co/140x140?text=Preview" style="width:140px; height:140px; object-fit:cover; border-radius:var(--radius-sm); border:2px solid var(--border-color); background:#fff;">
+                <div style="font-size:0.75rem; color:var(--text-muted); margin-top:4px;">লাইভ ইমেজ প্রিভিউ</div>
+              </div>
+              <div style="flex:1;">
+                <div class="form-group mb-2">
+                  <label class="form-label">কম্পিউটার থেকে ছবি আপলোড করুন</label>
+                  <input type="file" id="prod-file-input" accept="image/*" class="form-control">
+                </div>
+                <div class="form-group mb-0">
+                  <label class="form-label">অথবা অনলাইন ইমেজ লিংক পেস্ট করুন</label>
+                  <input type="url" id="prod-link-input" class="form-control" placeholder="https://example.com/product-image.jpg">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3">
+            <div class="form-group"><label class="form-label">SKU (Article) *</label><input type="text" id="p_sku" class="form-control" placeholder="Chi-Ali-000004" required></div>
+            <div class="form-group" style="grid-column: span 2;"><label class="form-label">প্রোডাক্টের নাম (P_Name) *</label><input type="text" id="p_name" class="form-control" required></div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3">
+            <div class="form-group"><label class="form-label">Category</label><input type="text" id="p_cat" class="form-control" placeholder="Watches Sunglasses Jewellery"></div>
+            <div class="form-group"><label class="form-label">Sub_Category</label><input type="text" id="p_subcat" class="form-control" placeholder="Jewellery"></div>
+            <div class="form-group"><label class="form-label">Child_Category</label><input type="text" id="p_childcat" class="form-control" placeholder="Rings"></div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-3">
+            <div class="form-group"><label class="form-label">Brand</label><input type="text" id="p_brand" class="form-control" placeholder="China Brand"></div>
+            <div class="form-group"><label class="form-label">ক্রয়মূল্য (Buying_price)</label><input type="number" id="p_buy" class="form-control" placeholder="100"></div>
+            <div class="form-group"><label class="form-label">খুচরা মূল্য (Selling_Price) *</label><input type="number" id="p_sell" class="form-control" placeholder="190" required></div>
+            <div class="form-group"><label class="form-label">আগের মূল্য (Original_Price)</label><input type="number" id="p_orig" class="form-control" placeholder="300"></div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-3">
+            <div class="form-group"><label class="form-label">পাইকারি মূল্য (WholeSale_price)</label><input type="number" id="p_ws" class="form-control" placeholder="140"></div>
+            <div class="form-group"><label class="form-label">ন্যূনতম পাইকারি পরিমাণ (Min_order_Q)</label><input type="text" id="p_min_q" class="form-control" value="10 Pcs"></div>
+            <div class="form-group"><label class="form-label">স্টক পরিমাণ (Stock) *</label><input type="number" id="p_stock" class="form-control" value="10" required></div>
+            <div class="form-group"><label class="form-label">কালার (Color)</label><input type="text" id="p_color" class="form-control" placeholder="Silver"></div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-3">
+            <div class="form-group"><label class="form-label">সাইজ (Size)</label><input type="text" id="p_size" class="form-control" placeholder="Free Size"></div>
+            <div class="form-group"><label class="form-label">ওজন (WEIGHT_KG)</label><input type="text" id="p_weight" class="form-control" placeholder="0.05 kg"></div>
+            <div class="form-group"><label class="form-label">প্রস্থ (WIDTH_CM)</label><input type="text" id="p_width" class="form-control" placeholder="10"></div>
+            <div class="form-group"><label class="form-label">দৈর্ঘ্য ও উচ্চতা (LxH)</label><input type="text" id="p_lxh" class="form-control" placeholder="10 x 5"></div>
+          </div>
+
+          <div class="form-group"><label class="form-label">Description (পণ্যের বিবরণ)</label><textarea id="p_desc" class="form-control" rows="3"></textarea></div>
+          <div class="form-group"><label class="form-label">Specification (স্পেসিফিকেশন)</label><textarea id="p_spec" class="form-control" rows="2"></textarea></div>
+          <div class="form-group"><label class="form-label">Others (অন্যান্য তথ্য)</label><textarea id="p_others" class="form-control" rows="2"></textarea></div>
+
+          <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-plus-circle"></i> প্রোডাক্ট Products শীটে সংরক্ষণ করুন</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="/assets/js/core/config.js"></script>
+  <script src="/assets/js/core/storage.js"></script>
+  <script src="/assets/js/core/state.js"></script>
+  <script src="/assets/js/core/api.js"></script>
+  <script src="/assets/js/core/auth.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/toast.js"></script>
+  <script src="/assets/js/components/forms.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      DCBD_Navbar.render();
+      DCBD_Router.guard();
+      DCBD_ImagePreview.bind("prod-file-input", "prod-link-input", "prod-add-preview");
+
+      document.getElementById("admin-add-product-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const newProduct = {
+          SKU: document.getElementById("p_sku").value,
+          P_Name: document.getElementById("p_name").value,
+          Category: document.getElementById("p_cat").value,
+          Sub_Category: document.getElementById("p_subcat").value,
+          Child_Category: document.getElementById("p_childcat").value,
+          Brand: document.getElementById("p_brand").value,
+          Buying_price: document.getElementById("p_buy").value,
+          Selling_Price: document.getElementById("p_sell").value,
+          Stock: document.getElementById("p_stock").value,
+          Original_Price: document.getElementById("p_orig").value,
+          WholeSale_price: document.getElementById("p_ws").value,
+          Min_order_Q: document.getElementById("p_min_q").value,
+          Images: document.getElementById("prod-add-preview").src,
+          Description: document.getElementById("p_desc").value,
+          Specification: document.getElementById("p_spec").value,
+          Others: document.getElementById("p_others").value,
+          Color: document.getElementById("p_color").value,
+          Size: document.getElementById("p_size").value,
+          WEIGHT_KG: document.getElementById("p_weight").value
+        };
+
+        DCBD_Toast.success("সফল", "প্রোডাক্ট সফলভাবে Products শীটে যুক্ত করা হয়েছে!");
+        setTimeout(() => window.location.href = "/admin/products/index.html", 1000);
+      });
+    });
+  </script>
+</body>
+</html>

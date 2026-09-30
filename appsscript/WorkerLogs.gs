@@ -1,0 +1,1 @@
+function getAllWorkerLogs() { return getSheetDataAsObjects(CONFIG.SHEET_NAMES.WORKER_LOGS); }

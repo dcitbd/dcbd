@@ -1,0 +1,1 @@
+function getAllSettings() { return getSheetDataAsObjects(CONFIG.SHEET_NAMES.SETTINGS); }

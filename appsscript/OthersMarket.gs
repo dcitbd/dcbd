@@ -1,0 +1,1 @@
+function getAllOthersMarket() { return getSheetDataAsObjects(CONFIG.SHEET_NAMES.OTHERS_MARKET); }

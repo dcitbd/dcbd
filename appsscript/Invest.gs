@@ -1,0 +1,1 @@
+function getAllInvest() { return getSheetDataAsObjects(CONFIG.SHEET_NAMES.INVEST); }

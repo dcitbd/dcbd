@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Landing Page (Image Preview) | Dream Cart BD Admin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/navbar.css">
+  <link rel="stylesheet" href="/assets/css/dashboard.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <link rel="stylesheet" href="/assets/css/notification.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+  <div class="dashboard-layout">
+    <main class="dashboard-main" style="max-width:850px; margin:2rem auto;">
+      <h1 class="section-title mb-4">নতুন ল্যান্ডিং পেজ তৈরি করুন (Add Landing Page)</h1>
+      <div style="background:var(--bg-surface); padding:2rem; border-radius:var(--radius-md); border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
+        <form id="admin-add-lp-form">
+          <div class="grid grid-cols-2 gap-3">
+            <div class="form-group"><label class="form-label">স্লাগ (Slug) *</label><input type="text" id="lp_slug" class="form-control" placeholder="smart-ring-offer" required></div>
+            <div class="form-group"><label class="form-label">স্লোগান (Bangla Slogan) *</label><input type="text" id="lp_slogan" class="form-control" placeholder="অনলাইনে অর্ডার করুন, পণ্য হাতে পেয়ে মূল্য পরিশোধ করুন!" required></div>
+          </div>
+
+          <div class="mb-4 p-3 rounded-md" style="background:var(--bg-subtle);">
+            <label class="form-label">প্রোডাক্ট রিভিউ ও অফার ছবি (Computer Upload & Link Paste Preview)</label>
+            <div class="flex items-center gap-4">
+              <img id="lp-preview-img" src="https://placehold.co/120x120?text=Review+Image" style="width:110px; height:110px; object-fit:cover; border-radius:var(--radius-sm); border:2px solid var(--primary); background:#fff;">
+              <div style="flex:1;">
+                <input type="file" id="lp-file" accept="image/*" class="form-control mb-2">
+                <input type="url" id="lp-link" class="form-control" placeholder="https://example.com/review-or-offer-image.jpg">
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="form-group"><label class="form-label">পণ্য নির্বাচন (SKU বা নাম)</label><input type="text" id="lp_products" class="form-control" placeholder="Chi-Ali-000001"></div>
+            <div class="form-group"><label class="form-label">মূল ওয়েবসাইট লিংক ড্রপডাউন</label><select id="lp_mainlink" class="form-control form-select"><option value="/products.html">/products.html (Products Page)</option><option value="/index.html">/index.html (Home Page)</option></select></div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-2 mb-4">
+            <label class="form-check"><input type="checkbox" checked> কল অপশন</label>
+            <label class="form-check"><input type="checkbox" checked> হোয়াটসঅ্যাপ</label>
+            <label class="form-check"><input type="checkbox" checked> ইমেইল</label>
+            <label class="form-check"><input type="checkbox" checked> সোশ্যাল আইকন</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-plus"></i> ল্যান্ডিং পেজ Landing-Pages শীটে সংরক্ষণ করুন</button>
+        </form>
+      </div>
+    </main>
+  </div>
+  <script src="/assets/js/core/config.js"></script>
+  <script src="/assets/js/core/auth.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/toast.js"></script>
+  <script src="/assets/js/components/forms.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      DCBD_Navbar.render();
+      DCBD_Router.guard();
+      DCBD_ImagePreview.bind("lp-file", "lp-link", "lp-preview-img");
+      document.getElementById("admin-add-lp-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        DCBD_Toast.success("সফল", "ল্যান্ডিং পেজ সফলভাবে Landing-Pages শীটে সংরক্ষণ করা হয়েছে!");
+        setTimeout(() => window.location.href = "/admin/landing-pages/index.html", 1000);
+      });
+    });
+  </script>
+</body>
+</html>

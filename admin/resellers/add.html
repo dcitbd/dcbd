@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Reseller (Image Preview) | Dream Cart BD Admin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/navbar.css">
+  <link rel="stylesheet" href="/assets/css/dashboard.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <link rel="stylesheet" href="/assets/css/notification.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+  <div class="dashboard-layout">
+    <main class="dashboard-main" style="max-width:800px; margin:2rem auto;">
+      <h1 class="section-title mb-4">নতুন রিসেলার যোগ করুন (Add Reseller)</h1>
+      <div style="background:var(--bg-surface); padding:2rem; border-radius:var(--radius-md); border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
+        <form id="admin-add-res-form">
+          <div class="mb-4 p-3 rounded-md" style="background:var(--bg-subtle);">
+            <div class="flex items-center gap-4">
+              <img id="res-add-preview" src="https://placehold.co/100?text=Shop+Logo" style="width:90px; height:90px; border-radius:var(--radius-sm); object-fit:cover; border:2px solid var(--primary); background:#fff;">
+              <div style="flex:1;">
+                <label class="form-label">Shop_logo (কম্পিউটার আপলোড বা অনলাইন লিংক প্রিভিউ)</label>
+                <input type="file" id="res-file" accept="image/*" class="form-control mb-2">
+                <input type="url" id="res-url" class="form-control" placeholder="https://example.com/logo.jpg">
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="form-group"><label class="form-label">Shop_ID *</label><input type="text" id="r_sid" class="form-control" value="Dcbd-resale-0005" required></div>
+            <div class="form-group"><label class="form-label">Shop_Name *</label><input type="text" id="r_sname" class="form-control" required></div>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="form-group"><label class="form-label">Name *</label><input type="text" id="r_name" class="form-control" required></div>
+            <div class="form-group"><label class="form-label">Mobile *</label><input type="tel" id="r_mob" class="form-control" required></div>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="form-group"><label class="form-label">Mail</label><input type="email" id="r_mail" class="form-control"></div>
+            <div class="form-group"><label class="form-label">NID_Number</label><input type="text" id="r_nid" class="form-control"></div>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="form-group"><label class="form-label">Trade_Licence_No</label><input type="text" id="r_trade" class="form-control"></div>
+            <div class="form-group"><label class="form-label">Status</label><select id="r_status" class="form-control form-select"><option value="Approved">Approved</option><option value="Pending">Pending</option></select></div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-store"></i> রিসেলার Resellers শীটে যুক্ত করুন</button>
+        </form>
+      </div>
+    </main>
+  </div>
+  <script src="/assets/js/core/config.js"></script>
+  <script src="/assets/js/core/auth.js"></script>
+  <script src="/assets/js/core/router.js"></script>
+  <script src="/assets/js/components/navbar.js"></script>
+  <script src="/assets/js/components/toast.js"></script>
+  <script src="/assets/js/components/forms.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      DCBD_Navbar.render();
+      DCBD_Router.guard();
+      DCBD_ImagePreview.bind("res-file", "res-url", "res-add-preview");
+      document.getElementById("admin-add-res-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        DCBD_Toast.success("সফল", "রিসেলার সফলভাবে Resellers শীটে সংরক্ষণ করা হয়েছে!");
+        setTimeout(() => window.location.href = "/admin/resellers/index.html", 1000);
+      });
+    });
+  </script>
+</body>
+</html>

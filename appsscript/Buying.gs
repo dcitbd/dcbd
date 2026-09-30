@@ -1,0 +1,1 @@
+function getAllBuying() { return getSheetDataAsObjects(CONFIG.SHEET_NAMES.BUYING); }

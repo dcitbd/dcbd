@@ -1,0 +1,1 @@
+function getReportsSummary() { return { success: true }; }

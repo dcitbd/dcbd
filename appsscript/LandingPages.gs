@@ -1,0 +1,1 @@
+function getAllLandingPages() { return getSheetDataAsObjects(CONFIG.SHEET_NAMES.LANDING_PAGES); }

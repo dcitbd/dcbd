@@ -1,0 +1,1 @@
+function getAllBanners() { return getSheetDataAsObjects(CONFIG.SHEET_NAMES.BANNERS); }

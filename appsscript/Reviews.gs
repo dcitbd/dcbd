@@ -1,0 +1,1 @@
+function getAllReviews() { return getSheetDataAsObjects(CONFIG.SHEET_NAMES.REVIEWS); }

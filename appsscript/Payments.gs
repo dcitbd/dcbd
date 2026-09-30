@@ -1,0 +1,1 @@
+function getAllPayments() { return getSheetDataAsObjects(CONFIG.SHEET_NAMES.PAYMENTS); }
