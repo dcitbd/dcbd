@@ -1,0 +1,1 @@
+const DCBD_WholesaleFav = { init() { DCBD_Favourite.render('favourite-grid-root'); } };

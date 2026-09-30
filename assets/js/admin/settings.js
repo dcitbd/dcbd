@@ -1,0 +1,1 @@
+const DCBD_AdminSettings = { init() {} };

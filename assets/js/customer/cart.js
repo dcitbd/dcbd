@@ -1,0 +1,1 @@
+const DCBD_CustCart = { init() { DCBD_Cart.render('cart-table-root'); } };

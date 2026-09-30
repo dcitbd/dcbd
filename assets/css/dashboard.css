@@ -1,0 +1,38 @@
+/* Customer, Reseller, Wholesaler Dashboards */
+.dashboard-layout {
+  display: flex;
+  min-height: calc(100vh - var(--header-height));
+}
+.dashboard-sidebar {
+  width: var(--sidebar-width);
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-color);
+  padding: 1.5rem 1rem;
+  flex-shrink: 0;
+  transition: transform var(--transition-normal);
+}
+.dashboard-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.dashboard-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+.dashboard-nav-item:hover, .dashboard-nav-item.active {
+  background: var(--primary-light);
+  color: var(--primary-hover);
+}
+.dashboard-main {
+  flex: 1;
+  padding: 2rem;
+  background: var(--bg-primary);
+  overflow-y: auto;
+}

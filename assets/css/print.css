@@ -1,0 +1,17 @@
+/* Print Stylesheet for Invoices, Reports & Vouchers */
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .site-navbar, .notice-bar, .site-footer, .fixed-action-buttons, .btn, .no-print {
+    display: none !important;
+  }
+  .voucher-card {
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+}

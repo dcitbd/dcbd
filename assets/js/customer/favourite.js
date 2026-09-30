@@ -1,0 +1,1 @@
+const DCBD_CustFav = { init() { DCBD_Favourite.render('favourite-grid-root'); } };

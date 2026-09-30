@@ -1,0 +1,63 @@
+/* Order Voucher Receipt & Barcode Styling */
+.voucher-card {
+  background: #ffffff;
+  color: #0f172a;
+  border: 2px dashed #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+.voucher-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgba(255, 87, 34, 0.05);
+  pointer-events: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  user-select: none;
+}
+.voucher-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.voucher-logo-text h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+.voucher-meta {
+  text-align: right;
+  font-size: 0.875rem;
+}
+.voucher-barcode {
+  text-align: center;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: var(--radius-sm);
+}
+.barcode-visual {
+  height: 48px;
+  width: 260px;
+  margin: 0 auto;
+  background: repeating-linear-gradient(90deg, #000, #000 2px, transparent 2px, transparent 5px, #000 5px, #000 9px, transparent 9px, transparent 12px);
+}
+.barcode-number {
+  font-family: monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-top: 6px;
+}

@@ -1,0 +1,1 @@
+const DCBD_WholesaleCart = { init() { DCBD_Cart.render('cart-table-root'); } };
